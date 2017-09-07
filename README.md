@@ -1,6 +1,5 @@
 # WeakAsyncTask
 
-
 AsyncTask在使用过程中可能会出现内存溢出的情况，下面就这种情况就行介绍
 
 AsyncTask的用法很简单，那么我们看下面这段代码
@@ -149,3 +148,8 @@ static abstract class WeakAsyncTask<Param, Progress, Result, WeakTarget> extends
 参考链接：
 [内存泄露之Thread][2]
 [Android性能优化之常见的内存泄漏][3]
+
+
+  [1]: http://116.196.91.16/2017/08/31/AsyncTask%E7%9A%84cancel%E6%96%B9%E6%B3%95%E8%A7%A3%E8%AF%BB/
+  [2]: http://946898963.github.io/2016/06/05/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E4%B9%8BThread/
+  [3]: http://blog.csdn.net/u010687392/article/details/49909477
