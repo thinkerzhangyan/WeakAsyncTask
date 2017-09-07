@@ -19,6 +19,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
     private Button mButtonKaiShiB;
     private Button mButtonKaiShiC;
     private Button mButtonStop;
+    private Button mButtonExit;
     private TextView mTextView;
 
     private MyAsyncTaskA mMyAsyncTaskA;
@@ -70,6 +71,9 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
                 stopAsyncTask(mWhich);
                 enableButton();
                 break;
+            case R.id.buttonExit:
+                finish();
+                break;
             default:
                 break;
         }
@@ -83,6 +87,8 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
 
         mButtonStop = (Button) findViewById(R.id.buttonStop);
 
+        mButtonExit = (Button) findViewById(R.id.buttonExit);
+
         mTextView = (TextView) findViewById(R.id.textView);
     }
 
@@ -90,6 +96,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
         mButtonKaiShiA.setOnClickListener(this);
         mButtonKaiShiB.setOnClickListener(this);
         mButtonKaiShiC.setOnClickListener(this);
+        mButtonExit.setOnClickListener(this);
 
         mButtonStop.setOnClickListener(this);
     }
@@ -107,6 +114,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
         mButtonKaiShiB.setEnabled(false);
         mButtonKaiShiC.setEnabled(false);
         mButtonStop.setEnabled(true);
+        mButtonExit.setEnabled(true);
     }
 
     private void enableButton(){
@@ -114,6 +122,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
         mButtonKaiShiB.setEnabled(true);
         mButtonKaiShiC.setEnabled(true);
         mButtonStop.setEnabled(false);
+        mButtonExit.setEnabled(false);
     }
 
 

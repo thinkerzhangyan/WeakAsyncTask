@@ -14,4 +14,10 @@
             android:id="@+id/button"
             android:text="进入AsyncTaskActivity"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="先进入AsyncTaskActivity，开启AsyncTask，然后回退到当前页面，观察标题栏提示的内存泄漏。可能需要等待几十秒钟。"/>
+
 </LinearLayout>
