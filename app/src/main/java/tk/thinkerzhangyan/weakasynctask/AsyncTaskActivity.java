@@ -103,7 +103,13 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
 
     private void initAsyncTasks(){
 
-        mMyAsyncTaskA = new MyAsyncTaskA();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mMyAsyncTaskA = new MyAsyncTaskA();//证明可以在子线程中创建AsyncTask的实例
+            }
+        }).start();
+
         mMyAsyncTaskB = new MyAsyncTaskB(this);
         mMyAsyncTaskC = new MyAsyncTaskC(this);
 
@@ -160,6 +166,8 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
                     Thread.currentThread().sleep(1000);
                     publishProgress(++i);
                     Log.d(TAG,"A-i:"+i);
+                    if(i==10)
+                        break;
                 }
             } catch (Exception e) {
                 return "异常";
@@ -170,6 +178,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements View.OnClick
         @Override
         protected void onProgressUpdate(Integer... params) {
             // 在这里更新下载进度
+            Log.d(TAG, "onProgressUpdate: "+mTextView.getText());
             mTextView.setText("postA:"+params[0]);
         }
 
