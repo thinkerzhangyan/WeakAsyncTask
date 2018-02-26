@@ -4,4 +4,4 @@
 
 关于AsyncTask的内存泄露，可以参考博客：  [AsyncTask内存泄露][1]
 
-[1]: http://116.196.91.16/2016/06/05/AsyncTask%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/
+[1]: http://thinkerzhangyan.github.io/2016/06/05/AsyncTask%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/
